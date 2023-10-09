@@ -2,26 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply min-h-screen grid place-content-center bg-slate-800 font-medium px-6 transition-all ease-in-out duration-1000;
+}
+
+#quote-box {
+  @apply bg-white p-6 flex flex-col gap-4 rounded w-full max-w-md;
+}
+
+#text {
+  @apply text-center text-2xl;
+}
+
+#author {
+  @apply text-right text-base;
+}
+
+#new-quote {
+  @apply w-max self-center;
+}
+
+#tweet-quote {
+  @apply bg-slate-800 p-2 rounded transition-all ease-in-out duration-1000;
+}
+
+#new-quote {
+  @apply bg-slate-800 p-2 rounded text-white transition-all ease-in-out duration-1000;
 }
